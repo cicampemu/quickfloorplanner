@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Quick Floor Planner - Draw a quick sketch of your building, house, flat, room or even event (wedding...). Free &
+    anonymous.</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/3.1.0/fabric.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!----script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script-->
+  <script src="main.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+  <link rel="stylesheet" href="styles.css">
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-114744580-2');
+  </script>
+
+</head>
+
+<body>
+
+  <!-- The Modal -->
+  <div id="myModal" class="modale">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>We use technology such as cookies on our site only to analyse our traffic. All data gathered are totally
+        anonymous and for traffic analysis only. We don't sell any data to any third party. See our <a href="./terms.html" target="_blank" style="color:#26a69a">terms and conditions</a> for more information. Click below to
+        consent to the use of this technology on this site.</p>
+      <div style="text-align:center">
+        <button class="btn btn-info btn-consent">I accept</button>
+      </div>
+    </div>
+  </div>
+
+  <nav class="grey darken-4" role="navigation" id="nav-bar" style="height:70px;">
+    <div class="nav-wrapper qfp-container">
+      <a id="logo-container" class="brand-logo" style="line-height:70px;font-size: 20px;" href="https://quickfloorplanner.com">Quick Floor Planner <small>-
+          Quickly draw the floor plan of your flat, house, room or event for free.</small></a>
+
+    </div>
+  </nav>
+  <div style="display: flex; align-items: flex-start;">
+
+    <div class="left">
+
+      <div style="display: inline-block; margin-left: 10px; margin-top: 1px; margin-right: 10px;">
+        <h2>1. Add a floor plan<br>by clicking on the canvas.</h2>
+
+        <h2>2. Add doors, walls and windows.</h2>
+        <button id="addDoor" class="btn btn-info">Door</button><br>
+        <button id="addWindow" class="btn btn-info">Window</button><br>
+        <button id="addArc" class="btn btn-info">Arc</button><br>
+        <button id="addLine" class="btn btn-info">Wall</button><br>
+
+        <h2>3. Add shapes and furnitures.</h2>
+        <button id="addRect" class="btn btn-info">Rectangle</button><br>
+        <button id="addCircle" class="btn btn-info">Circle</button><br>
+
+        <h2>4. Add texts and measurements.</h2>
+        <button id="addText" class="btn btn-info">Text</button><br>
+        <button id="addArrow" class="btn btn-info">Arrow</button><br>
+      </div>
+    </div>
+    <div class="right">
+      <div class="section no-pad-bot no-pad-top">
+        <input type="file" id="imageLoader" name="imageLoader" />
+        <canvas id="c"></canvas>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: center; margin-top:40px;">
+        <span class="options-button"><button id="clearCanvas" class="btn btn-info">Clear all</button><br></span>
+        <span class="options-button"><button id="remove" class="btn btn-info">Remove selected item</button><br></span>
+        <span class="options-button"><button id="sendToBack" class="btn btn-info">send item to back</button><br></span>
+        <span class="options-button"><button id="save" class="btn btn-info"><a id="lnkDownload"
+              href="#">Save</a></button><br></span>
+
+      </div>
+    </div>
+  </div>
+  <br>
+
+  <div style="text-align: center;">
+    <hr>
+    <h4>Have a website?</h4>
+    <p>Get Quick Floor Planner WordPress plugin & let your visitors draw their own sketches on your website.</p>
+    <button class="btn btn-info"><a class="brand-logo" href="https://wordpress.org/plugins/quick-floor-planner/"
+        target="_blank">Download the WP plugin</a></button>
+    <br>
+    <br>
+  </div>
+
+</body>
+
+</html>
