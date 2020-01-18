@@ -9,10 +9,11 @@ var activeLine;
 var activeShape = false;
 var canvas;
 var grid = 30;
+var imgToLoad;
 $(window).load(function () {
     // instantiates canvas
     prototypefabric.initCanvas();
- 
+
 
     // Get the modal
     var modal = document.getElementById("myModal");
@@ -21,7 +22,7 @@ $(window).load(function () {
     var span = document.getElementsByClassName("close")[0];
     var closeModal = document.getElementsByClassName("btn-consent")[0];
 
-  
+
     // When the user clicks on <span> (x), close the modal
     span.onclick = function () {
         modal.style.display = "none";
@@ -37,6 +38,7 @@ $(window).load(function () {
             modal.style.display = "none";
         }
     }
+
 });
 var prototypefabric = new function () {
     this.initCanvas = function () {
@@ -44,6 +46,7 @@ var prototypefabric = new function () {
         canvas.setWidth(720);
         canvas.setHeight(520);
         //canvas.selection = false;
+
 
 
         document.getElementById('addArc').onclick = function () {
@@ -78,6 +81,8 @@ var prototypefabric = new function () {
             prototypefabric.initCanvas;
             prototypefabric.polygon.drawPolygon();
         }
+
+
 
         // adds rectangle
         document.getElementById('addRect').onclick = function () {
@@ -240,7 +245,29 @@ var prototypefabric = new function () {
         //     canvas.add(new fabric.Line([0, i * grid, 720, i * grid], { stroke: '#ccc', selectable: false, opacity: 0.1 }))
         // }
 
-
+        // upload img from pc
+        document.getElementById('upload').onclick = function () {
+            document.getElementById('loadImg').click();
+        }
+        $("#loadImg").on('change', function (ev) {
+            var reader = new FileReader();
+            reader.onload = function (event) {
+                var imgObj = new Image();
+                imgObj.src = event.target.result;
+                imgObj.onload = function () {
+                    var image = new fabric.Image(imgObj);
+                    image.scale(0.5).set({
+                        angle: 0,
+                        left: 100,
+                        top: 100
+                    });
+                    canvas.centerObject(image);
+                    canvas.add(image);
+                    canvas.renderAll();
+                }
+            }
+            reader.readAsDataURL(ev.target.files[0]);
+        });
 
         canvas.on('mouse:down', function (options) {
             if (options.target && options.target.id == pointArray[0].id) {

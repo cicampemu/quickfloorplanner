@@ -134,3 +134,7 @@ a {
   text-decoration: none;
   cursor: pointer;
 }
+
+#loadImg {
+  visibility: hidden;
+}
