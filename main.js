@@ -255,12 +255,15 @@ var prototypefabric = new function () {
                 var imgObj = new Image();
                 imgObj.src = event.target.result;
                 imgObj.onload = function () {
-                    var image = new fabric.Image(imgObj);
-                    image.scale(0.5).set({
-                        angle: 0,
-                        left: 100,
-                        top: 100
+                    var image = new fabric.Image(imgObj, {
+                      left: 100,
+                      top: 100,
+                      angle: 30,
+                      opacity: 0.85,
+                      backgroundColor: "red"
                     });
+          
+                    image.scale(0.5);
                     canvas.centerObject(image);
                     canvas.add(image);
                     canvas.renderAll();
