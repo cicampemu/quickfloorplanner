@@ -8,7 +8,8 @@
   <title>Quick Floor Planner - Draw a quick sketch of your building, house, flat, room or even event (wedding...). Free &
     anonymous.</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/3.1.0/fabric.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="hammer.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/zingtouch/1.0.6/zingtouch.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <!----script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script-->
   <script src="main.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
@@ -48,7 +49,7 @@
 
     <div class="left">
 
-      <div style="display: inline-block; margin-left: 10px; margin-top: 1px; margin-right: 10px;">
+      <div style="display: inline-block; margin-left: 10px; margin-top: 1px; margin-right: 10px;" id="left">
         <h2>1. Add a floor plan<br>by clicking on the canvas.</h2>
 
         <h2>2. Add doors, walls and windows.</h2>
@@ -68,10 +69,13 @@
         <h2>5. Add images from your computer.</h2>
         <button id="upload" class="btn btn-info">Image</button><br>
         <input id="loadImg" type="file" />
+
+        <h2>6. Add a polygon.</h2>
+        <button id="loadPolygonCanvas" class="btn btn-info">Add a polygon</button><br>
       </div>
     </div>
-    <div class="right">
-      <div class="section no-pad-bot no-pad-top">
+    <div class="right" id="right">
+      <div class="section no-pad-bot no-pad-top" id="canvas-container">
         <input type="file" id="imageLoader" name="imageLoader" />
         <canvas id="c"></canvas>
       </div>

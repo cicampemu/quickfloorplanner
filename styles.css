@@ -3,9 +3,9 @@
     /*font-family: Arial, Helvetica, sans-serif;*/
     font-weight: 100;
   }
-  
+
   body {
-   
+
   }
 
   .qfp-container {
@@ -50,6 +50,12 @@
     top:0;
     border: 2px solid #000;
     box-shadow: 5px 5px 5px grey;
+}
+
+#cpolygone {
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
 }
 
 a.brand-logo,
